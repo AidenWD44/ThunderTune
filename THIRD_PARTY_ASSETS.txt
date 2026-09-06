@@ -1,0 +1,40 @@
+ThunderTune v1.4 — bundled headstock image references
+
+These headstock images were bundled from Wikimedia Commons pages discovered via live search.
+Please review the linked source pages and licenses before any redistribution beyond personal/testing use.
+
+1) 6-String Guitar
+Source page: https://commons.wikimedia.org/wiki/File:Guitar_headstock_front.jpg
+Author: Martin Möller
+License: CC BY-SA 2.0 DE
+
+2) 12-String Guitar
+Source page: https://commons.wikimedia.org/wiki/File:Headstock_of_Suzuki_12_string_guitar.jpg
+Author: Elmschrat
+License: CC BY-SA 4.0
+
+3) 4-String Bass
+Source page: https://commons.wikimedia.org/wiki/File:Bass_guitar_headstock.jpg
+License shown on source page; see Wikimedia Commons page for details.
+
+4) Ukulele
+Source page: https://commons.wikimedia.org/wiki/File:Mya-Moe_ukulele_headstock.jpg
+Author: Epoire
+License: CC BY-SA 3.0
+
+5) Violin
+Source page: https://commons.wikimedia.org/wiki/File:Violin_scroll.jpg
+Author: ZUU Mumu Entertainment
+License: Wikimedia Commons page lists free Creative Commons licenses.
+
+6) Mandolin
+Source page: https://commons.wikimedia.org/wiki/File:Collings_MT2-O_mandolin_headstock.jpg
+Author: Roberto Cipriano
+License: CC BY 2.0
+
+7) 5-String Banjo
+Source page: https://commons.wikimedia.org/wiki/File:Peghead_on_A._A._Farland_banjo.jpg
+Author: Rives McDow
+Permission: Free use confirmed via Wikimedia VRT notice on source page.
+
+This app uses the images as embedded UI references and overlays its own note markers and interaction layer.
