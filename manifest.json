@@ -1,0 +1,25 @@
+{
+  "name": "ThunderTune",
+  "short_name": "ThunderTune",
+  "description": "A mobile-first multi-instrument tuner with alternate and custom tunings, stylized headstock views, and custom presets.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0b18",
+  "theme_color": "#15112d",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

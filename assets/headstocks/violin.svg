@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="700" viewBox="0 0 360 700" fill="none">
+<defs>
+  <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#8c4419"/>
+    <stop offset="32%" stop-color="#a95624"/>
+    <stop offset="68%" stop-color="#77330f"/>
+    <stop offset="100%" stop-color="#3f1d0d"/>
+  </linearGradient>
+  <linearGradient id="darkwood" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#16181f"/>
+    <stop offset="50%" stop-color="#0c0f16"/>
+    <stop offset="100%" stop-color="#1f2430"/>
+  </linearGradient>
+  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#f5f6fb"/>
+    <stop offset="22%" stop-color="#b3b7c2"/>
+    <stop offset="50%" stop-color="#fbfdff"/>
+    <stop offset="76%" stop-color="#8e929d"/>
+    <stop offset="100%" stop-color="#e6e8ee"/>
+  </linearGradient>
+  <linearGradient id="chromeDark" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#20252f"/>
+    <stop offset="38%" stop-color="#4d5565"/>
+    <stop offset="65%" stop-color="#151a24"/>
+    <stop offset="100%" stop-color="#8890a2"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.25"/>
+  </filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.22"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" rx="24" fill="transparent"/>
+<g filter="url(#shadow)"><path d="M167 620 L167 516 C167 485 174 450 184 417 C193 387 197 360 197 334 C197 286 190 241 179 196 C174 174 170 150 170 122 C170 96 182 70 206 55 C228 41 254 43 273 57 C251 63 239 79 237 99 C235 118 243 138 257 156 C270 173 275 192 273 209 C270 234 255 253 235 266 C223 273 217 282 217 296 C217 308 223 318 235 325 C254 336 266 354 267 375 C268 399 253 418 229 428 C209 436 198 449 196 469 L193 620 Z" fill="url(#wood)" stroke="#f1efe8" stroke-width="8"/><path d="M193 59 C211 45 243 47 259 60 C240 64 224 82 222 99 C219 121 225 143 241 163" stroke="#fff" stroke-opacity="0.18" stroke-width="4" fill="none"/><rect x="167" y="517" width="26" height="125" fill="#4d2e21"/><rect x="165" y="507" width="30" height="10" rx="2" fill="#efe9da"/><rect x="182.7" y="211.6" width="15.3" height="6.8" rx="2.5" fill="url(#chromeDark)"/><rect x="133.4" y="200.6" width="49.3" height="28.9" rx="14.4" fill="url(#chromeDark)" stroke="#d8dce4" stroke-opacity="0.55" stroke-width="1.2" filter="url(#soft)"/><circle cx="198.0" cy="215.0" r="10.2" fill="url(#chrome)" stroke="#eef1f7" stroke-opacity="0.9" stroke-width="1.4" filter="url(#soft)"/><circle cx="195.4" cy="212.4" r="2.5" fill="#fff" fill-opacity="0.9"/><rect x="250.0" y="241.6" width="15.3" height="6.8" rx="2.5" fill="url(#chromeDark)"/><rect x="265.3" y="230.6" width="49.3" height="28.9" rx="14.4" fill="url(#chromeDark)" stroke="#d8dce4" stroke-opacity="0.55" stroke-width="1.2" filter="url(#soft)"/><circle cx="250.0" cy="245.0" r="10.2" fill="url(#chrome)" stroke="#eef1f7" stroke-opacity="0.9" stroke-width="1.4" filter="url(#soft)"/><circle cx="247.4" cy="242.4" r="2.5" fill="#fff" fill-opacity="0.9"/><rect x="190.7" y="331.6" width="15.3" height="6.8" rx="2.5" fill="url(#chromeDark)"/><rect x="141.4" y="320.6" width="49.3" height="28.9" rx="14.4" fill="url(#chromeDark)" stroke="#d8dce4" stroke-opacity="0.55" stroke-width="1.2" filter="url(#soft)"/><circle cx="206.0" cy="335.0" r="10.2" fill="url(#chrome)" stroke="#eef1f7" stroke-opacity="0.9" stroke-width="1.4" filter="url(#soft)"/><circle cx="203.4" cy="332.4" r="2.5" fill="#fff" fill-opacity="0.9"/><rect x="258.0" y="361.6" width="15.3" height="6.8" rx="2.5" fill="url(#chromeDark)"/><rect x="273.3" y="350.6" width="49.3" height="28.9" rx="14.4" fill="url(#chromeDark)" stroke="#d8dce4" stroke-opacity="0.55" stroke-width="1.2" filter="url(#soft)"/><circle cx="258.0" cy="365.0" r="10.2" fill="url(#chrome)" stroke="#eef1f7" stroke-opacity="0.9" stroke-width="1.4" filter="url(#soft)"/><circle cx="255.4" cy="362.4" r="2.5" fill="#fff" fill-opacity="0.9"/><path d="M 172 640 C 170 586 170 550 169 517 C 167 437 181 327 198 215" stroke="#bfc6d6" stroke-width="4" stroke-linecap="round" opacity="0.85"/><path d="M 178 640 C 177 588 178 550 178 517 C 179 435 197 339 206 335" stroke="#bfc6d6" stroke-width="4" stroke-linecap="round" opacity="0.85"/><path d="M 184 640 C 185 588 184 550 184 517 C 184 437 202 330 250 245" stroke="#bfc6d6" stroke-width="4" stroke-linecap="round" opacity="0.85"/><path d="M 190 640 C 192 586 192 550 193 517 C 196 437 217 330 258 365" stroke="#bfc6d6" stroke-width="4" stroke-linecap="round" opacity="0.85"/></g></svg>
