@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#15112d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="ThunderTune" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>ThunderTune</title>
+</head>
+<body data-theme="thunder">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">⚡</div>
+        <div>
+          <h1>ThunderTune</h1>
+          <p>Tune anything. Play everything.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="installBtn" class="icon-button hidden" aria-label="Install ThunderTune">⬇</button>
+        <button id="settingsBtn" class="icon-button" aria-label="Open settings">⚙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel setup-panel">
+        <div class="field-grid">
+          <div>
+            <label for="instrumentSelect">Instrument</label>
+            <select id="instrumentSelect"></select>
+          </div>
+          <div>
+            <label for="tuningSelect">Tuning</label>
+            <select id="tuningSelect"></select>
+          </div>
+        </div>
+
+        <div id="recentSection" class="recent-section hidden">
+          <div class="section-label">Recent</div>
+          <div id="recentTunings" class="chip-row"></div>
+        </div>
+
+        <div class="mode-switch" role="group" aria-label="Tuning mode">
+          <button id="autoModeBtn" class="mode-btn active">Auto Detect</button>
+          <button id="stringModeBtn" class="mode-btn">Tune by String</button>
+        </div>
+
+        <button id="startButton" class="primary-button">Start Tuner</button>
+      </section>
+
+      <section class="panel tuner-panel">
+        <div id="autoView">
+          <div class="reading-top">
+            <div id="note" class="note-display">--</div>
+            <div id="frequency" class="frequency-display">0.00 Hz</div>
+          </div>
+
+          <div class="meter-wrap">
+            <div class="meter-words">
+              <span>TUNE UP</span>
+              <span>IN TUNE</span>
+              <span>TUNE DOWN</span>
+            </div>
+            <div class="meter">
+              <div class="meter-arc"></div>
+              <div class="center-line"></div>
+              <div id="needle" class="needle"></div>
+            </div>
+            <div class="cent-scale">
+              <span>-50¢</span><span>-25¢</span><span>0¢</span><span>+25¢</span><span>+50¢</span>
+            </div>
+          </div>
+
+          <div id="status" class="status">Press Start</div>
+          <div id="substatus" class="substatus">Choose your instrument and tuning.</div>
+          <div id="stringChips" class="string-chips"></div>
+        </div>
+
+        <div id="stringView" class="hidden">
+          <div class="headstock-layout">
+            <div class="headstock-wrap">
+              <svg id="headstockSvg" viewBox="0 0 320 560" role="img" aria-label="Interactive instrument headstock">
+                <defs>
+                  <linearGradient id="woodGrad" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#5c351f"/>
+                    <stop offset="50%" stop-color="#8f5a31"/>
+                    <stop offset="100%" stop-color="#3f2518"/>
+                  </linearGradient>
+                </defs>
+                <path id="headstockShape" d="M118 525 C100 400 94 280 110 155 C115 115 96 88 84 48 C125 20 195 20 236 48 C224 88 205 115 210 155 C226 280 220 400 202 525 Z"
+                      fill="url(#woodGrad)" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+                <text x="160" y="95" text-anchor="middle" class="svg-logo">⚡</text>
+                <text x="160" y="127" text-anchor="middle" class="svg-title">THUNDERTUNE</text>
+                <g id="pegLayer"></g>
+                <g id="stringLayer"></g>
+              </svg>
+            </div>
+
+            <div class="selected-string-card">
+              <div class="eyebrow">Selected String</div>
+              <div id="selectedStringNote" class="selected-note">--</div>
+              <div id="selectedStringFreq" class="selected-freq">0.00 Hz target</div>
+              <div id="stringModeStatus" class="mini-status">Tap a tuning peg</div>
+              <div class="mini-meter">
+                <div class="mini-center"></div>
+                <div id="miniNeedle" class="mini-needle"></div>
+              </div>
+              <button id="playReferenceBtn" class="secondary-button">▶ Play Reference Tone</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel compact-footer">
+        <div>
+          <strong id="currentSummary">6-String Guitar · Standard</strong>
+          <span id="referenceSummary">A4 = 440.0 Hz</span>
+        </div>
+        <span id="offlineBadge" class="offline-badge">Offline Ready</span>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="settingsDialog">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>Settings</h2>
+        <button class="icon-button" data-close="settingsDialog">✕</button>
+      </div>
+
+      <div class="settings-grid">
+        <section>
+          <h3>Reference Pitch</h3>
+          <label for="referenceHz">A4 frequency</label>
+          <input id="referenceHz" type="number" min="400" max="480" step="0.1" />
+          <div class="button-row">
+            <button class="secondary-button preset-hz" data-hz="440">440 Hz</button>
+            <button class="secondary-button preset-hz" data-hz="432">432 Hz</button>
+          </div>
+        </section>
+
+        <section>
+          <h3>Appearance</h3>
+          <div class="theme-grid">
+            <button class="theme-choice" data-theme-choice="light">☀ Light</button>
+            <button class="theme-choice" data-theme-choice="dark">🌙 Dark</button>
+            <button class="theme-choice" data-theme-choice="thunder">⚡ Thunder</button>
+          </div>
+        </section>
+
+        <section>
+          <h3>Behavior</h3>
+          <label class="toggle-row">
+            <span>Auto-start last setup</span>
+            <input id="autostartToggle" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <span>Sound & haptic feedback</span>
+            <input id="feedbackToggle" type="checkbox" />
+          </label>
+        </section>
+
+        <section>
+          <h3>Install</h3>
+          <button id="installFromSettings" class="secondary-button">Install ThunderTune</button>
+          <p class="helper">On iPhone/iPad, use Safari → Share → Add to Home Screen if the install button is unavailable.</p>
+        </section>
+
+        <section>
+          <h3>Custom Tunings</h3>
+          <button id="manageCustomBtn" class="secondary-button">Manage Custom Tunings</button>
+        </section>
+      </div>
+
+      <div class="modal-actions">
+        <button id="saveSettings" class="primary-button">Save Settings</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="customDialog">
+    <div class="modal">
+      <div class="modal-head">
+        <h2 id="customDialogTitle">Create Custom Tuning</h2>
+        <button class="icon-button" data-close="customDialog">✕</button>
+      </div>
+
+      <div class="field-grid single-mobile">
+        <div>
+          <label for="customName">Preset name</label>
+          <input id="customName" type="text" placeholder="Example: Iris" />
+        </div>
+        <div>
+          <label for="customInstrument">Instrument</label>
+          <select id="customInstrument"></select>
+        </div>
+      </div>
+
+      <div id="customRows" class="custom-rows"></div>
+
+      <div class="modal-actions split">
+        <button id="deleteCustomBtn" class="danger-button hidden">Delete</button>
+        <div>
+          <button id="cancelCustom" class="secondary-button">Cancel</button>
+          <button id="saveCustom" class="primary-button">Save Preset</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="manageDialog">
+    <div class="modal">
+      <div class="modal-head">
+        <h2>Custom Tunings</h2>
+        <button class="icon-button" data-close="manageDialog">✕</button>
+      </div>
+      <div id="customPresetList" class="preset-list"></div>
+      <div class="modal-actions">
+        <button id="newCustomBtn" class="primary-button">+ New Custom Tuning</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="inputWarningDialog">
+    <div class="modal warning-modal">
+      <div class="warning-icon">🎙</div>
+      <h2>Position your microphone closer to your instrument</h2>
+      <p>ThunderTune is having trouble hearing a clear note. Move your phone closer, reduce background noise, and play one string cleanly.</p>
+      <label class="checkbox-row">
+        <input id="dontShowSession" type="checkbox" />
+        <span>Don’t show again this session</span>
+      </label>
+      <button id="warningOkBtn" class="primary-button">OK</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
